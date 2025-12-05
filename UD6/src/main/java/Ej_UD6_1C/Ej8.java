@@ -15,8 +15,8 @@ public class Ej8 {
         int minimo [] = new int[TAMANHO1];
 
 
-        String nombrePais [] = {"España","Alemania","Francia","Italia"};
-
+        String nombrePais [] = {"España","Alemania","Francia","Replublica Dominicana"};
+        String medMinMax [] = {"MED MIN MAX"};
 
         int matriz [][] = new int[TAMANHO1][TAMANHO2];
 
@@ -26,7 +26,6 @@ public class Ej8 {
             int min = TAMANHOMAX;
             for (int j = 0; j<TAMANHO2;j++){
                 matriz[i][j] = (int)(Math.random() * (TAMANHOMAX-TAMANHOMIN+1) + TAMANHOMIN);
-                //System.out.println(matriz[i][j]);
                 suma += matriz[i][j];
                 if(max < matriz[i][j]){
                     max = matriz[i][j];
@@ -50,15 +49,19 @@ public class Ej8 {
             maximo[i] = max;
             minimo[i] = min;
         }
-        for (int i = 0; i<12;i++){
+        for (int i = 0; i<=TAMANHO2;i++){
             System.out.print("\t");
         }
-        System.out.print("MED MIN MAX" +"\n");
+        System.out.printf("%32s \n" , medMinMax);
 
+        for (int i = 0; i<TAMANHO1;i++){
+            System.out.printf("%21s: " , nombrePais[i]);
+            for (int j = 0; j<TAMANHO2;j++){
+                System.out.print(matriz[i][j] +" ");
 
-        /*System.out.println(nombrePais [0] +": " + + media [0] +" " +maximo [0] +" " +minimo [0]);
-        System.out.println(nombrePais [1] +": " + media [1] +" " +maximo [1] +" "  +minimo [1]);
-        System.out.println(nombrePais [2] +": " + media [2] +" "  +maximo [2] +" "  +minimo [2]);
-        System.out.println(nombrePais [3] +": " + media [3] +" "  +maximo [3] +" "   +minimo [3]);*/
+            }
+            System.out.print("| " +media[i]+" " +minimo[i]+" " +maximo[i]);
+            System.out.print("\n");
+        }
     }
 }
